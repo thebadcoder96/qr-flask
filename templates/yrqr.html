@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Your QR Code{% endblock %}
+
+{% block main %}
+
+<div class="container text-center">
+    <h1 class="jumbotron-heading">Here is the QR Code Generated</h1>
+    <p class="my-0 font-weight-normal text-center">Link: <a href="{{ link }}">{{ link }}</a></p>
+    <img class="lead" src="{{url_for('static', filename='qrcode.png')}}"/>
+    <form action="download">
+        <input class="btn btn-primary my-2" type="submit" value="Download QR Code">
+    </form>
+  </div>
+
+<!-- <p> <b>Here is the QR Code Generated</b></p>
+<img src="{{url_for('static', filename='qrcode.png')}}"/>
+
+<form action="download">
+    <input type="submit" value="Download QR Code">
+</form> -->
+{% endblock %}

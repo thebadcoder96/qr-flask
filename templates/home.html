@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}QR Code Generator{% endblock %}
+
+{% block main %}
+
+<!-- <h1>QR Code Generator</h1>
+
+<form action="yrqr" method="POST">
+    <label for="url">Enter the URL</label>
+    <input type="url" name="url" value="" required>
+    <br>
+    <input type="submit" value="Generate">
+</form> -->
+
+<div class="container">
+  <div class="card-deck mb-1">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal text-center">Enter a link to convert to QR code</h4>
+      </div>
+      <div class="card-body">
+        <form action="yrqr" method="post">
+          <label for="url">Website URL</label>
+          <input type="url" class="form-control" name="url" id="url" value="" required>
+          <br>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Generate</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+{% endblock %}
