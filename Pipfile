@@ -8,6 +8,7 @@ flask = "*"
 pyqrcode = "*"
 pypng = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 

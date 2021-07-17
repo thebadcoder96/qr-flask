@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, send_file, abort
 import os, json, pyqrcode, png
+from whitenoise import WhiteNoise
 
 app = Flask(__name__)
 app.secret_key = 'xder56yhnko987654esxsw3456yujo9'
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 
 @app.route('/')
