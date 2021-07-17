@@ -20,7 +20,7 @@ def qr():
             with open('log.json','w') as f:
                 json.dump(links, f)
             #change the link to qr code and return 
-            pyqrcode.create(links).png('/files/qrcode.png', scale=6)
+            pyqrcode.create(links).png('./static/qrcode.png', scale=6)
             return render_template('yrqr.html', link=request.form['url'])
             #redirect(url_for('static', filename='qrcode.png'))
        
@@ -29,7 +29,7 @@ def qr():
 
 @app.route('/download')
 def download():
-    return send_file('/files/qrcode.png', as_attachment=True)
+    return send_file('./static/qrcode.png', as_attachment=True)
 
 @app.route('/<string:text>')
 def redirect_to_qr(text):
